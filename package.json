@@ -1,0 +1,19 @@
+{
+  "name": "lucilebaudouin_3_30042021",
+  "version": "1.0.0",
+  "description": "ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:.css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lulutartine/LucileBaudouin_3_30042021.git"
+  },
+  "author": "lb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lulutartine/LucileBaudouin_3_30042021/issues"
+  },
+  "homepage": "https://github.com/Lulutartine/LucileBaudouin_3_30042021#readme"
+}
