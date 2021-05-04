@@ -1,9 +1,5 @@
-body {
-  font-family: "Roboto", sans-serif;
-}
+@import 'sass/main.scss';
+@import 'sass/layouts.scss';
+@import 'sass/variables.scss';
 
-h1 {
-  font-family: "Shrikhand", cursive;
-}
 
-/*# sourceMappingURL=style.css.map */
