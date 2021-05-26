@@ -24,19 +24,37 @@ h3 {
   font-family: "Shrikhand", cursive;
 }
 
+.menu > h2 {
+  font-size: 1em;
+  font-weight: lighter;
+  border-bottom: 0.2em solid #99E2D0;
+  width: 13%;
+  margin-bottom: 1em;
+  padding-bottom: 0.2em;
+}
+
+.menu-card > h3 {
+  font-size: 1.1em;
+}
+
 p {
   font-weight: 300;
   margin: 0;
 }
 
-.restaurant-btn {
+.btn {
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   padding: 1em;
   color: white;
   border-radius: 2em;
   box-shadow: 1px 4px 13px -10px #353535;
+  width: 65%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
 }
-.restaurant-btn:hover {
+.btn:hover {
   background: #fface8;
 }
 
@@ -94,15 +112,16 @@ footer ul a {
 }
 
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
+  height: 7vh;
   padding: 15px;
 }
+header a {
+  float: left;
+}
 header img {
-  width: 60%;
+  width: 55%;
   height: auto;
+  position: absolute;
 }
 
 .reservation {
@@ -190,10 +209,12 @@ header img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
 }
 
 .menu-image {
-  height: 30vh;
+  height: 24vh;
   position: relative;
   z-index: 0;
 }
@@ -201,21 +222,57 @@ header img {
   width: 100%;
 }
 
-main {
+.menu {
   position: relative;
   z-index: 1;
   background: #f6f6f6;
-  border-radius: 2em;
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
   padding: 15px;
 }
-main .menu-title {
+.menu .menu-title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.menu .menu-card {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: white;
+  box-shadow: 1px 4px 13px -10px #353535;
+  border-radius: 1em;
+  width: 93%;
+  height: 11vh;
+  margin-bottom: 1em;
+  padding: 0.5em;
+}
+.menu .menu-card .menu-card__cmplt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu .menu-card .menu-card__cmplt p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu .menu-card .menu-card__cmplt p:last-child {
+  font-weight: bold;
+  width: 9%;
+}
+.menu .btn {
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.--hide {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

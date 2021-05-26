@@ -1,12 +1,14 @@
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
+    height: 7vh;
     padding: 15px;
 
+    a {
+        float: left;
+    }
+
     img {
-        width: 60%;
+        width: 55%;
         height: auto;
+        position: absolute;
     }
 }
