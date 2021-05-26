@@ -1,0 +1,30 @@
+header {
+    .fas {
+        display:unset;
+    }
+}
+
+.menu-image {
+    height: 30vh;
+    position: relative;
+    z-index: 0;
+
+    img {
+        width: 100%;
+    }
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    background:$lightgrey;
+    border-radius: 2em;
+    padding: 15px;
+
+    .menu-title {
+    display: flex;
+    justify-content: space-between;
+}
+}
+
+
