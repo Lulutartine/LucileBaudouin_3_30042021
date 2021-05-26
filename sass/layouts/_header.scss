@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    padding: 15px;
+
+    .fas {
+        display: none;
+    }
+
+    img {
+        width: 75%;
+        height: auto;
+    }
+}

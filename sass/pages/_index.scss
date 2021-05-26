@@ -1,0 +1,105 @@
+.reservation {
+    padding: 30px 20px 30px 20px;
+    background-color:$lightgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 39vh;
+    
+    p {
+        text-align: center;
+    }
+
+}
+
+.fonctionnement-card {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1em;
+
+    .fonctionnement-btn__number {
+        color: white;
+        background-color: $primary;
+        border-radius: 1em;
+        font-size: smaller;
+        padding: 0.4em 0.6em;
+        float: left;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .fonctionnement-btn {
+        display: inline-flex;
+        align-items: center;
+        width: 95%;
+        background-color: $lightgrey;
+        border-radius: 1.3em;
+        padding: 1.5em;
+        margin-left: 1em;
+        z-index: 0;
+        box-shadow: $boxshadow;
+
+        .fas {
+            color: $darkgrey;
+        }
+
+    .fonctionnement-btn__text {
+        font-weight: 400;
+        margin-left: 1em;
+    }
+}
+}
+
+
+.restaurant-card {
+    border-radius: 1.3em;
+    height: 45vh;
+    background-color: white;
+    box-shadow: $boxshadow;
+    margin-bottom: 1em;
+
+    .restaurant-card__top {
+        height: 70%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-left-radius: 1.3em;
+            border-top-right-radius: 1.3em;
+            position: relative;
+            z-index: 0;
+        } 
+        .new-label {
+            background: $tertiary;
+            color: darken($color: $tertiary, $amount: 40);
+            font-size: 0.9em;
+            width: fit-content;
+            padding: 0.5em;
+            margin: 0.5em;
+            border-radius: 0.2em;
+            float: right;
+            position: absolute;
+            z-index: 1;
+        }
+        
+    }
+
+    .restaurant-card__bottom {
+        clear: both;
+        height: 30%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    // >.restaurant-card__top {
+        // height: 60%;
+    // }
+    // &.restaurant-card__bottom {
+        // height: 40%;
+    // }        
+    // 
+}

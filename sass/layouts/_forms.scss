@@ -1,0 +1,16 @@
+
+.search-district__form {
+    background-color: $mediumgrey;
+    color: $darkgrey;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+
+    input {
+        font:inherit;
+        border: none;
+        background-color: transparent;
+        font-weight: 400;
+        padding-left: 10px;
+    }
+}

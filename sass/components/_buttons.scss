@@ -1,0 +1,19 @@
+.restaurant-btn {
+    background: linear-gradient(to bottom right, $secondary, $primary);
+    padding: 1em;
+    color: white;
+    border-radius: 2em;
+    box-shadow: $boxshadow;
+
+    &:hover {
+        background: lighten($secondary, 10);
+        // box-shadow: darken($boxshaddow,5);
+    }
+}
+
+
+
+
+
+
+
