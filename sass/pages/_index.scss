@@ -9,6 +9,7 @@
     
     p {
         text-align: center;
+        color: $darkgrey;
     }
 
 }
@@ -18,10 +19,10 @@
     align-items: center;
     width: 100%;
     margin-bottom: 1em;
-
+    
     .fonctionnement-btn__number {
         color: white;
-        background-color: $primary;
+        background-color:$primary;
         border-radius: 1em;
         font-size: smaller;
         padding: 0.4em 0.6em;
@@ -42,7 +43,7 @@
         box-shadow: $boxshadow;
 
         .fas {
-            color: $darkgrey;
+            color:#747474;
         }
 
     .fonctionnement-btn__text {
@@ -59,6 +60,7 @@
     background-color: white;
     box-shadow: $boxshadow;
     margin-bottom: 1em;
+    @extend %hoveractivestyle;
 
     .restaurant-card__top {
         height: 70%;
@@ -79,9 +81,9 @@
             padding: 0.5em;
             margin: 0.5em;
             border-radius: 0.2em;
-            float: right;
             position: absolute;
             z-index: 1;
+            right: 2em;
         }
         
     }
@@ -95,13 +97,4 @@
         padding-left: 0.8em;
         padding-right: 0.8em;
     }
-
-
-    // >.restaurant-card__top {
-        // height: 60%;
-    // }
-    // &.restaurant-card__bottom {
-        // height: 40%;
-    // }        
-    // 
 }

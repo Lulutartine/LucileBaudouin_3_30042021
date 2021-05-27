@@ -5,15 +5,11 @@
     border-radius: 2em;
     box-shadow: $boxshadow;
     width: 65%;
-    text-align: center;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
     white-space: nowrap;
-
-    &:hover {
-        background: lighten($secondary, 10);
-        // box-shadow: darken($boxshaddow,5);
-    }
+    @extend %hoveractivestyle;
 }
 
 

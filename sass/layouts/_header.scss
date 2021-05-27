@@ -1,14 +1,18 @@
 header {
-    height: 7vh;
-    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 15px 15px 15px;
 
     a {
         float: left;
+        position: fixed;
+        left: 1em;
+        color: $darkgrey;
     }
 
     img {
-        width: 55%;
+        width: 50%;
         height: auto;
-        position: absolute;
     }
 }
