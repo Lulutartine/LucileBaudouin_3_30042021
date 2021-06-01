@@ -1,0 +1,56 @@
+.fade-in-top {
+	-webkit-animation: fade-in-top 1s ease-in-out 1s both;
+	        animation: fade-in-top 1s ease-in-out 1s both;
+}
+ @-webkit-keyframes fade-in-top {
+    0% {
+      -webkit-transform: translateY(-15px);
+              transform: translateY(-15px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-top {
+    0% {
+      -webkit-transform: translateY(-15px);
+              transform: translateY(-15px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+.menu-card .fas {
+	animation: rotate-center 1s linear 1s reverse forwards;
+}
+ @keyframes rotate-center {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .menu-card .check-box:hover {
+        animation: slide-in-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  } 
+@keyframes slide-in-right {
+    0% {
+      transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  
