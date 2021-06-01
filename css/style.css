@@ -131,6 +131,59 @@ p {
     opacity: 1;
   }
 }
+.load-9 {
+  margin: auto;
+  background-color: white;
+}
+
+.spinner {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
+}
+
+.bubble-1,
+.bubble-2 {
+  position: absolute;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: #4b9cdb;
+}
+
+.bubble-2 {
+  top: auto;
+  bottom: 0;
+}
+
+.load-9 .spinner {
+  animation: loadingI 2s linear infinite;
+}
+
+.load-9 .bubble-1,
+.load-9 .bubble-2 {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.load-9 .bubble-2 {
+  animation-delay: -1s;
+}
+
+@keyframes loadingI {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
 .fonctionnement {
   padding: 15px;
 }
@@ -244,6 +297,10 @@ header img {
   margin-left: 1em;
   z-index: 0;
   box-shadow: 1px 4px 13px -10px #353535;
+}
+.fonctionnement-card .fonctionnement-btn:hover {
+  box-shadow: 1px 4px 12px -4px #353535;
+  background-color: #f2eafb;
 }
 .fonctionnement-card .fonctionnement-btn .fas {
   color: #747474;

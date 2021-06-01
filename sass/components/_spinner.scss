@@ -1,49 +1,52 @@
-.loading-spinner {
-    position: relative;
-    width: 45px;
-    height: 45px;
-    margin: 0 auto;
+.load-9 {
+  margin: auto;
+  background-color: white;
 }
-.bubble-1,.bubble-2 {
-      position: absolute;
-      top: 0;
-      width: 25px;
-      height: 25px;
-      border-radius: 100%;
-      background-color: #4b9cdb;
+.spinner {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
 }
-// logo
-.bubble-2 {
-    top: auto;
-    bottom: 0;
-    }
 
-.loading-spinner .spinner {
-    animation: loadingI 2s linear infinite;
+.bubble-1,
+.bubble-2 {
+  position: absolute;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: #4b9cdb;
 }
-.loading-spinner .bubble-1,.loading-spinner .bubble-2 {
-    animation: bounce 2s ease-in-out infinite;
+
+.bubble-2 {
+  top: auto;
+  bottom: 0;
 }
-.loading-spinner .bubble-2 {
+
+.load-9 .spinner {
+  animation: loadingI 2s linear infinite;
+}
+.load-9 .bubble-1,
+.load-9 .bubble-2 {
+  animation: bounce 2s ease-in-out infinite;
+}
+.load-9 .bubble-2 {
   animation-delay: -1s;
 }
 
-.l-9 {
-    animation-delay: 1.44s;
+@keyframes loadingI {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-  @keyframes loadingI {
-    100% {
-      transform: rotate(360deg);
-    }
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(0);
   }
-
-  @keyframes bounce {
-    0%,
-    100% {
-      transform: scale(0);
-    }
-    50% {
-      transform: scale(1);
-    }
+  50% {
+    transform: scale(1);
   }
+}
