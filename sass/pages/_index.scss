@@ -27,7 +27,7 @@
     background-color: white;
     box-shadow: $boxshadow;
     margin-bottom: 1em;
-    @extend %hoveractivestyle;
+    @extend %hoverstyle;
 
     &__top {
         height: 74%;

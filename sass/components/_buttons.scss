@@ -9,7 +9,7 @@
     margin-right: auto;
     text-align: center;
     white-space: nowrap;
-    @extend %hoveractivestyle;
+    @extend %hoverstyle;
 }
 
 .fonctionnement-btn {
@@ -37,7 +37,6 @@
         padding: 0.4em 0.6em;
         float: left;
         position: absolute;
-        z-index: 1;
     }
     .fas {
         color:#747474;

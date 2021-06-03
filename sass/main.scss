@@ -2,10 +2,10 @@
 @import "./utils/extensions";
 @import "./utils/functions.scss";
 @import "./utils/mixins.scss";
+@import "./utils/animations";
 @import "./base/typography";
 @import "./components/buttons";
-@import "./components/animations";
-@import "./components/spinner";
+@import "./components/loader";
 @import "./layouts/container";
 @import "./layouts/footer";
 @import "./layouts/forms";
