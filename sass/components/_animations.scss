@@ -1,3 +1,4 @@
+// Loading Spinner 
 .fade-in-top {
 	-webkit-animation: fade-in-top 1s ease-in-out 1s both;
 	        animation: fade-in-top 1s ease-in-out 1s both;
@@ -26,31 +27,42 @@
       opacity: 1;
     }
   }
-  
-.menu-card .fas {
-	animation: rotate-center 1s linear 1s reverse forwards;
-}
- @keyframes rotate-center {
-    0% {
-      transform: rotate(0);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
 
-  .menu-card .check-box:hover {
-        animation: slide-in-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  } 
-@keyframes slide-in-right {
-    0% {
-      transform: translateX(1000px);
-      opacity: 0;
+// Btn J'aime coeur 
+.heart {
+  & .heart {
+    &--empty {
+      z-index: 1;
+      stroke: black
     }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
+    &--full {
+      z-index: 2;
+      fill: url(#gradient);
+      stroke: url(#gradient);
+      opacity: 0;
+      transform: scale(0);
+      transition: all 0.5s;
     }
   }
+}
+
+.menu-card {
+  & .check-box {
+      transform: translateX(100%);
+      transition: transform 0.5s;
+    & .fa-check-circle {
+        transform: rotate(0);
+        transition: transform 0.5s ;
+    }
+  }
+  &:hover {
+    & .check-box {
+        transform: translateX(0%);
+        & .fa-check-circle{
+          transform: rotate(360deg);
+        }
+      }
+    }  
+}   
   
   

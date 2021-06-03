@@ -55,25 +55,57 @@ p {
   white-space: nowrap;
 }
 
-.restaurant-card .far, .menu-title .far {
+.fonctionnement-btn {
+  display: inline-flex;
+  align-items: center;
+  width: 95%;
+  background-color: #f2f2f2;
+  border-radius: 1.3em;
+  padding: 1.5em;
+  margin-left: 1em;
+  z-index: 0;
+  box-shadow: 1px 4px 13px -10px #353535;
+}
+.fonctionnement-btn:hover {
+  box-shadow: 1px 4px 12px -4px #353535;
+  background-color: #f2eafb;
+  cursor: pointer;
+}
+.fonctionnement-btn:hover .fas {
+  color: #9356DC;
+}
+.fonctionnement-btn__number {
+  color: white;
+  background-color: #9356DC;
+  border-radius: 1em;
+  font-size: smaller;
+  padding: 0.4em 0.6em;
+  float: left;
   position: absolute;
-  right: 1em;
+  z-index: 1;
 }
-.restaurant-card .far:hover, .menu-title .far:hover {
-  color: transparent;
+.fonctionnement-btn .fas {
+  color: #747474;
 }
-.restaurant-card .fas, .menu-title .fas {
-  opacity: 0;
+.fonctionnement-btn__text {
+  font-weight: 400;
+  margin-left: 1em;
 }
-.restaurant-card .fas:hover, .menu-title .fas:hover {
-  opacity: 1;
-  position: absolute;
-  right: 1em;
-  background: -moz-linear-gradient(top, #9356dc 0%, #ff79da 100%);
-  background: -webkit-linear-gradient(top, #9356dc 0%, #ff79da 100%);
-  background: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+.fonctionnement-btn__text:hover {
+  color: #353535;
+}
+
+.heart {
+  width: 0.5em;
+  height: 0.5em;
+  background-image: url(../images/icons/heart-regular.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 10px;
+  cursor: pointer;
+}
+.heart:hover {
+  background-image: url(../images/icons/heart-solid.svg);
 }
 
 .fade-in-top {
@@ -105,73 +137,52 @@ p {
     opacity: 1;
   }
 }
-.menu-card .fas {
-  animation: rotate-center 1s linear 1s reverse forwards;
+.heart .heart--empty {
+  z-index: 1;
+  stroke: black;
+}
+.heart .heart--full {
+  z-index: 2;
+  fill: url(#gradient);
+  stroke: url(#gradient);
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.5s;
 }
 
-@keyframes rotate-center {
+.menu-card .check-box {
+  transform: translateX(100%);
+  transition: transform 0.5s;
+}
+.menu-card .check-box .fa-check-circle {
+  transform: rotate(0);
+  transition: transform 0.5s;
+}
+.menu-card:hover .check-box {
+  transform: translateX(0%);
+}
+.menu-card:hover .check-box .fa-check-circle {
+  transform: rotate(360deg);
+}
+
+@keyframes gradient {
   0% {
-    transform: rotate(0);
+    background: #9356DC;
+    opacity: 0.5;
+  }
+  40% {
+    background: #FF79DA;
+    opacity: 0.5;
+  }
+  80% {
+    background: #99E2D0;
+    opacity: 0.5;
   }
   100% {
-    transform: rotate(360deg);
-  }
-}
-.menu-card .check-box:hover {
-  animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-@keyframes slide-in-right {
-  0% {
-    transform: translateX(1000px);
     opacity: 0;
   }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
 }
-.load-9 {
-  margin: auto;
-  background-color: white;
-}
-
-.spinner {
-  position: relative;
-  width: 45px;
-  height: 45px;
-  margin: 0 auto;
-}
-
-.bubble-1,
-.bubble-2 {
-  position: absolute;
-  top: 0;
-  width: 25px;
-  height: 25px;
-  border-radius: 100%;
-  background-color: #4b9cdb;
-}
-
-.bubble-2 {
-  top: auto;
-  bottom: 0;
-}
-
-.load-9 .spinner {
-  animation: loadingI 2s linear infinite;
-}
-
-.load-9 .bubble-1,
-.load-9 .bubble-2 {
-  animation: bounce 2s ease-in-out infinite;
-}
-
-.load-9 .bubble-2 {
-  animation-delay: -1s;
-}
-
-@keyframes loadingI {
+@keyframes mov {
   100% {
     transform: rotate(360deg);
   }
@@ -184,11 +195,46 @@ p {
     transform: scale(1);
   }
 }
+.loading-spinner {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 3;
+  opacity: 0;
+  animation: gradient 3s linear 1 both;
+  animation-delay: -1s;
+}
+.loading-spinner__container {
+  width: 20%;
+  height: 20%;
+  position: relative;
+  z-index: 11;
+  margin: auto;
+  top: 50%;
+  animation: mov 2s linear infinite;
+  animation-delay: -1s;
+}
+.loading-spinner__container__bubble-1, .loading-spinner__container__bubble-2 {
+  position: absolute;
+  top: 0;
+  width: 3em;
+  height: 3em;
+  border-radius: 100%;
+  background-color: white;
+  animation: bounce 2s ease-in-out infinite;
+  animation-delay: -1s;
+}
+.loading-spinner__container__bubble-2 {
+  top: auto;
+  bottom: 0;
+  animation-delay: -1s;
+}
+
 .fonctionnement {
   padding: 15px;
 }
 
-#restaurants {
+.restaurants {
   padding: 15px;
   background-color: #f2f2f2;
 }
@@ -277,50 +323,18 @@ header img {
   width: 100%;
   margin-bottom: 1em;
 }
-.fonctionnement-card .fonctionnement-btn__number {
-  color: white;
-  background-color: #9356DC;
-  border-radius: 1em;
-  font-size: smaller;
-  padding: 0.4em 0.6em;
-  float: left;
-  position: absolute;
-  z-index: 1;
-}
-.fonctionnement-card .fonctionnement-btn {
-  display: inline-flex;
-  align-items: center;
-  width: 95%;
-  background-color: #f2f2f2;
-  border-radius: 1.3em;
-  padding: 1.5em;
-  margin-left: 1em;
-  z-index: 0;
-  box-shadow: 1px 4px 13px -10px #353535;
-}
-.fonctionnement-card .fonctionnement-btn:hover {
-  box-shadow: 1px 4px 12px -4px #353535;
-  background-color: #f2eafb;
-}
-.fonctionnement-card .fonctionnement-btn .fas {
-  color: #747474;
-}
-.fonctionnement-card .fonctionnement-btn .fonctionnement-btn__text {
-  font-weight: 400;
-  margin-left: 1em;
-}
 
 .restaurant-card {
   border-radius: 1.3em;
-  height: 45vh;
+  height: 40vh;
   background-color: white;
   box-shadow: 1px 4px 13px -10px #353535;
   margin-bottom: 1em;
 }
-.restaurant-card .restaurant-card__top {
-  height: 70%;
+.restaurant-card__top {
+  height: 74%;
 }
-.restaurant-card .restaurant-card__top img {
+.restaurant-card__top img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -329,32 +343,40 @@ header img {
   position: relative;
   z-index: 0;
 }
-.restaurant-card .restaurant-card__top .new-label {
+.restaurant-card__top .new-label {
   background: #99E2D0;
   color: #278870;
   font-size: 0.9em;
   width: fit-content;
   padding: 0.5em;
-  margin: 0.5em;
+  margin: 0.7em;
   border-radius: 0.2em;
   position: absolute;
   z-index: 1;
-  right: 2em;
+  right: 1em;
 }
-.restaurant-card .restaurant-card__bottom {
+.restaurant-card__bottom {
   clear: both;
-  height: 30%;
+  height: 26%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 0.8em;
   padding-right: 0.8em;
 }
+.restaurant-card__text .heart {
+  position: absolute;
+  right: 0.8rem;
+  top: 0.6rem;
+  width: 1.6rem;
+  height: auto;
+}
 
 .menu-image {
   height: 24vh;
   position: relative;
   z-index: 0;
+  width: auto;
 }
 .menu-image img {
   width: 100%;
@@ -367,6 +389,7 @@ header img {
   border-top-left-radius: 2em;
   border-top-right-radius: 2em;
   padding: 15px;
+  width: auto;
 }
 .menu .menu-title {
   display: flex;
@@ -380,17 +403,21 @@ header img {
   background-color: white;
   box-shadow: 1px 4px 13px -10px #353535;
   border-radius: 1em;
-  width: 100%;
-  height: 10vh;
+  height: 7vh;
+  padding: 0.7em;
   margin-bottom: 1em;
+  overflow: hidden;
 }
 .menu .menu-card .menu-card__text {
-  width: 81%;
-  height: 10vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-left: 1em;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.menu .menu-card .menu-card__text:hover {
+  width: 85%;
 }
 .menu .menu-card .menu-card__text .menu-card__cmplt {
   display: flex;
@@ -404,7 +431,6 @@ header img {
 }
 .menu .menu-card .menu-card__text .menu-card__cmplt p:last-child {
   font-weight: bold;
-  width: 9%;
   overflow: visible;
   text-overflow: unset;
   margin-left: 0.5em;
@@ -412,15 +438,17 @@ header img {
 }
 .menu .menu-card .check-box {
   width: 15%;
-  height: 10vh;
+  height: 100%;
   background-color: #99E2D0;
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  right: 0;
 }
-.menu .menu-card .check-box .fas {
+.menu .menu-card .check-box .fa-check-circle {
   color: white;
 }
 .menu .btn {
