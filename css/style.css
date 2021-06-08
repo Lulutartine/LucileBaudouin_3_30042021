@@ -148,6 +148,72 @@ p {
   background-image: url(../images/icons/heart-solid.svg);
 }
 
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.25;
+    transform: scale(0.75);
+  }
+}
+@keyframes opacity-loading {
+  0%, 80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.spinner-box {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f2f2f2;
+  opacity: 1;
+  pointer-events: none;
+  animation: opacity-loading 3s linear both;
+}
+.spinner-box img {
+  width: 50%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.75;
+}
+.spinner-box .pulse-container {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.spinner-box .pulse-bubble {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+}
+.spinner-box .pulse-bubble-1 {
+  background-color: #9356DC;
+  animation: pulse 0.5s ease 0s infinite alternate;
+}
+.spinner-box .pulse-bubble-2 {
+  background-color: #FF79DA;
+  animation: pulse 0.5s ease 0.25ms infinite alternate;
+}
+.spinner-box .pulse-bubble-3 {
+  background-color: #99E2D0;
+  animation: pulse 0.5s ease 0.5s infinite alternate;
+}
+
 .fonctionnement {
   padding: 15px;
 }
