@@ -1,0 +1,97 @@
+// tablet  ------------------------------------------//
+
+// desktop ------------------------------------------//
+// index page
+.responsive-container__desktop {
+    @include desktop {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 0fr;
+    grid-template-areas:
+      "search-district fonctionnement"
+      "reservation fonctionnement"
+      "restaurants restaurants";
+    }
+}
+.search-district { 
+    @include desktop {
+    grid-area: search-district; 
+    }
+}
+
+body .reservation { 
+    @include desktop {
+    grid-area: reservation;
+    height: 32vh;
+    background-color: white;
+    }
+}
+
+.fonctionnement { 
+    @include desktop {
+    grid-area: fonctionnement; 
+        & .fonctionnement-card__container {
+            flex-direction: column;
+        }
+        & .fonctionnement-card {
+            width: 100%;
+        }
+        & h2 {
+            padding-left: 1em;
+        }
+    }
+}
+
+.restaurants { 
+    @include desktop {
+    grid-area: restaurants; 
+    & h2 {
+        text-align: center;
+    }
+    & .restaurant-card {
+        @include desktop {
+            width: 24%;
+            height: 30vh;
+        }
+        &__container {
+            @include desktop {
+                flex-wrap: nowrap;
+                width: 100%;
+            }
+        }
+    }
+    }
+}
+
+// menu page
+.responsive-container {
+    @include desktop {
+        display: grid;
+        grid-template-columns: 31% 31% 31%;
+        grid-template-rows: none;
+        grid-template-areas:
+        "starters plates desserts";
+        column-gap: 1em;
+    }
+}
+
+body {
+    @include desktop {
+        & .menu {
+        width: 90%;
+        margin: auto;
+        background-color: transparent;
+            & .menu-card__text {
+                justify-content: space-evenly;
+            }
+        }
+        & .menu-image {
+            overflow: hidden;
+            margin-bottom: 2em;
+        }
+
+        & .heart {
+            margin-right: 4em;
+        }
+    }
+}

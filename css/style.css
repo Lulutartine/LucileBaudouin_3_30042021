@@ -54,7 +54,7 @@ h3 {
   font-family: "Shrikhand", cursive;
 }
 
-.menu > h2 {
+.menu h2 {
   font-size: 1em;
   font-weight: lighter;
   border-bottom: 0.2em solid #99E2D0;
@@ -148,72 +148,6 @@ p {
   background-image: url(../images/icons/heart-solid.svg);
 }
 
-@keyframes pulse {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0.25;
-    transform: scale(0.75);
-  }
-}
-@keyframes opacity-loading {
-  0%, 80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-.spinner-box {
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #f2f2f2;
-  opacity: 1;
-  pointer-events: none;
-  animation: opacity-loading 3s linear both;
-}
-.spinner-box img {
-  width: 50%;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.75;
-}
-.spinner-box .pulse-container {
-  width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.spinner-box .pulse-bubble {
-  width: 2em;
-  height: 2em;
-  border-radius: 50%;
-}
-.spinner-box .pulse-bubble-1 {
-  background-color: #9356DC;
-  animation: pulse 0.5s ease 0s infinite alternate;
-}
-.spinner-box .pulse-bubble-2 {
-  background-color: #FF79DA;
-  animation: pulse 0.5s ease 0.25ms infinite alternate;
-}
-.spinner-box .pulse-bubble-3 {
-  background-color: #99E2D0;
-  animation: pulse 0.5s ease 0.5s infinite alternate;
-}
-
 .fonctionnement {
   padding: 15px;
 }
@@ -278,13 +212,100 @@ header {
 }
 header a {
   float: left;
-  position: fixed;
+  position: absolute;
   left: 1em;
   color: #353535;
 }
 header img {
   width: 50%;
   height: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .responsive-container__desktop {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 0fr;
+    grid-template-areas: "search-district fonctionnement" "reservation fonctionnement" "restaurants restaurants";
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .search-district {
+    grid-area: search-district;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .reservation {
+    grid-area: reservation;
+    height: 32vh;
+    background-color: white;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .fonctionnement {
+    grid-area: fonctionnement;
+  }
+  .fonctionnement .fonctionnement-card__container {
+    flex-direction: column;
+  }
+  .fonctionnement .fonctionnement-card {
+    width: 100%;
+  }
+  .fonctionnement h2 {
+    padding-left: 1em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .restaurants {
+    grid-area: restaurants;
+  }
+  .restaurants h2 {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) and (min-width: 1024px) {
+  .restaurants .restaurant-card {
+    width: 24%;
+    height: 30vh;
+  }
+}
+@media screen and (min-width: 1024px) and (min-width: 1024px) {
+  .restaurants .restaurant-card__container {
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .responsive-container {
+    display: grid;
+    grid-template-columns: 31% 31% 31%;
+    grid-template-rows: none;
+    grid-template-areas: "starters plates desserts";
+    column-gap: 1em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .menu {
+    width: 90%;
+    margin: auto;
+    background-color: transparent;
+  }
+  body .menu .menu-card__text {
+    justify-content: space-evenly;
+  }
+  body .menu-image {
+    overflow: hidden;
+    margin-bottom: 2em;
+  }
+  body .heart {
+    margin-right: 4em;
+  }
 }
 
 .reservation {

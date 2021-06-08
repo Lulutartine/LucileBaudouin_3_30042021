@@ -1,0 +1,76 @@
+// tablet  ------------------------------------------//
+// index page
+.reservation {
+    @include tablet {
+        & a {
+            width: 25%;
+        }
+    }
+}
+
+.fonctionnement {
+    & .fonctionnement-card {
+        @include tablet {
+            width: 30%;
+        }
+        &__container {
+            @include tablet {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+.restaurants {
+    & .restaurant-card {
+        @include tablet {
+            width: 45%;
+        }
+        &__container {
+            @include tablet {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                width: 80%;
+                margin: auto;
+            }
+        }
+    }
+}
+
+// menu page
+.responsive-container {
+    @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1em 1em;
+    grid-template-areas:
+      "starters plates"
+      "desserts desserts";
+}
+}
+.menu-starters { 
+    @include tablet {
+    grid-area: starters; 
+}
+}
+.menu-plates { 
+    @include tablet {
+    grid-area: plates; 
+}
+}
+.menu-desserts { 
+    @include tablet {
+    grid-area: desserts; 
+}
+}
+
+.menu {
+    .btn {
+        @include tablet {
+        width: 19%;
+        }
+    }
+}
