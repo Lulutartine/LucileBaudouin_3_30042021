@@ -1,19 +1,21 @@
 .restaurant-card:hover, .btn:hover {
   opacity: 0.8;
   box-shadow: 1px 4px 13px -10px #353535, 1px 4px 12px -4px #353535;
+  cursor: pointer;
 }
 
-.heart .heart--empty {
-  z-index: 1;
-  stroke: black;
+@keyframes slide {
+  0% {
+    transform: translateY(-15%);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 100%;
+  }
 }
-.heart .heart--full {
-  z-index: 2;
-  fill: url(#gradient);
-  stroke: url(#gradient);
-  opacity: 0;
-  transform: scale(0);
-  transition: all 0.5s;
+.fade-in-top {
+  animation: slide 1s ease-out 1s both, opacity 1s ease-in-out 0.5s both;
 }
 
 .menu-card .check-box {
@@ -22,7 +24,7 @@
 }
 .menu-card .check-box .fa-check-circle {
   transform: rotate(0);
-  transition: transform 0.5s;
+  transition: transform 0.8s;
 }
 .menu-card:hover .check-box {
   transform: translateX(0%);
@@ -130,6 +132,18 @@ p {
   padding: 10px;
   cursor: pointer;
 }
+.heart .heart--empty {
+  z-index: 1;
+  stroke: black;
+}
+.heart .heart--full {
+  z-index: 2;
+  fill: url(#gradient);
+  stroke: url(#gradient);
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.5s;
+}
 .heart:hover {
   background-image: url(../images/icons/heart-solid.svg);
 }
@@ -153,27 +167,31 @@ p {
   }
 }
 .spinner-box {
-  pointer-events: none;
   position: fixed;
-  width: 100%;
-  height: 100%;
+  z-index: 10;
   top: 0;
   left: 0;
-  z-index: 10;
+  width: 100%;
+  height: 100%;
   background: #f2f2f2;
   opacity: 1;
+  pointer-events: none;
   animation: opacity-loading 3s linear both;
 }
 .spinner-box img {
+  width: 50%;
   position: absolute;
   top: 40%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.75;
 }
 .spinner-box .pulse-container {
   width: 30%;
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -185,15 +203,15 @@ p {
 }
 .spinner-box .pulse-bubble-1 {
   background-color: #9356DC;
-  animation: pulse 0.4s ease 0s infinite alternate;
+  animation: pulse 0.5s ease 0s infinite alternate;
 }
 .spinner-box .pulse-bubble-2 {
   background-color: #FF79DA;
-  animation: pulse 0.4s ease 0.2s infinite alternate;
+  animation: pulse 0.5s ease 0.25ms infinite alternate;
 }
 .spinner-box .pulse-bubble-3 {
   background-color: #99E2D0;
-  animation: pulse 0.4s ease 0.4s infinite alternate;
+  animation: pulse 0.5s ease 0.5s infinite alternate;
 }
 
 .fonctionnement {
@@ -373,8 +391,9 @@ header img {
   padding: 0.7em;
   margin-bottom: 1em;
   overflow: hidden;
+  cursor: pointer;
 }
-.menu .menu-card .menu-card__text {
+.menu .menu-card__text {
   width: 100%;
   height: 7vh;
   display: flex;
@@ -382,25 +401,25 @@ header img {
   justify-content: space-between;
   overflow: hidden;
 }
-.menu .menu-card .menu-card__text:hover {
+.menu .menu-card__text:hover {
   width: 85%;
 }
-.menu .menu-card .menu-card__text h3 {
+.menu .menu-card__text h3 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu .menu-card .menu-card__text .menu-card__cmplt {
+.menu .menu-card__text .menu-card__cmplt {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.menu .menu-card .menu-card__text .menu-card__cmplt p {
+.menu .menu-card__text .menu-card__cmplt p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu .menu-card .menu-card__text .menu-card__cmplt p:last-child {
+.menu .menu-card__text .menu-card__cmplt p:last-child {
   font-weight: bold;
   overflow: visible;
   text-overflow: unset;
@@ -409,7 +428,7 @@ header img {
 }
 .menu .menu-card .check-box {
   width: 15%;
-  height: 7vh;
+  height: 10vh;
   background-color: #99E2D0;
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
@@ -421,7 +440,7 @@ header img {
 }
 .menu .menu-card .check-box .fa-check-circle {
   color: white;
-  font-size: 1.2 em;
+  font-size: 1.2em;
 }
 .menu .btn {
   margin-top: 2em;
@@ -431,6 +450,9 @@ header img {
 body {
   padding: 0;
   margin: 0 auto 0 auto;
+}
+body > * {
+  box-sizing: border-box;
 }
 
 a {
