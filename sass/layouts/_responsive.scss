@@ -37,6 +37,7 @@ header {
         padding-right: 3em;
         & .restaurant-card {
                 width: 48%;
+                height: 23vh;
             }
     }
 }
@@ -99,14 +100,9 @@ body {
         & .menu {
         width: 90%;
         margin: auto;
-        background-color: transparent;
             & .menu-card__text {
                 justify-content: space-evenly;
             }
-        }
-        & .menu-image {
-            overflow: hidden;
-            margin-bottom: 2em;
         }
     }
 }
