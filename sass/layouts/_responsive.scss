@@ -1,80 +1,99 @@
 // tablet  ------------------------------------------//
-
-// desktop ------------------------------------------//
 // index page
-.responsive-container__desktop {
-    @include desktop {
-    display: grid;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: 0fr;
-    grid-template-areas:
-      "search-district fonctionnement"
-      "reservation fonctionnement"
-      "restaurants restaurants";
-    }
-}
-.search-district { 
-    @include desktop {
-    grid-area: search-district; 
+body {
+    @include tablet {
+        font-size: 14px;
     }
 }
 
-body .reservation { 
-    @include desktop {
-    grid-area: reservation;
-    height: 32vh;
-    background-color: white;
-    }
-}
-
-.fonctionnement { 
-    @include desktop {
-    grid-area: fonctionnement; 
-        & .fonctionnement-card__container {
-            flex-direction: column;
-        }
-        & .fonctionnement-card {
-            width: 100%;
-        }
-        & h2 {
-            padding-left: 1em;
+header {
+    & img {
+        @include tablet {
+            width: 25%;
         }
     }
 }
 
-.restaurants { 
-    @include desktop {
-    grid-area: restaurants; 
-    & h2 {
-        text-align: center;
-    }
-    & .restaurant-card {
-        @include desktop {
-            width: 24%;
-            height: 30vh;
+.responsive-container__tablet {
+    @include tablet {
+        display: flex;
+        & .reservation {
+            justify-content: space-between;
+            width: 60%;
+            background-color: transparent;
         }
-        &__container {
-            @include desktop {
-                flex-wrap: nowrap;
-                width: 100%;
+        & .fonctionnement {
+            width: 40%;
+        }
+    }
+}
+
+.restaurant-card__container {
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-left: 3em;
+        padding-right: 3em;
+        & .restaurant-card {
+                width: 48%;
             }
-        }
-    }
     }
 }
 
 // menu page
 .responsive-container {
-    @include desktop {
-        display: grid;
-        grid-template-columns: 31% 31% 31%;
-        grid-template-rows: none;
-        grid-template-areas:
-        "starters plates desserts";
-        column-gap: 1em;
+    @include tablet {
+    display: grid;
+    grid-template-columns: 31% 31% 31%;
+    grid-template-rows: none;
+    grid-template-areas:
+    "starters plates desserts";
+    column-gap: 1em;
+}
+}
+.menu-starters { 
+    @include tablet {
+    grid-area: starters; 
+}
+}
+.menu-plates { 
+    @include tablet {
+    grid-area: plates; 
+}
+}
+.menu-desserts { 
+    @include tablet {
+    grid-area: desserts; 
+}
+}
+
+.menu {
+    .btn {
+        @include tablet {
+        width: 19%;
+        }
     }
 }
 
+// desktop ------------------------------------------//
+// index page
+.responsive-container__desktop {
+    @include desktop {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+.restaurant-card__container {
+    @include desktop {
+        & .restaurant-card {
+                width: 24%;
+            }
+    }
+}
+
+// menu page
 body {
     @include desktop {
         & .menu {
@@ -88,10 +107,6 @@ body {
         & .menu-image {
             overflow: hidden;
             margin-bottom: 2em;
-        }
-
-        & .heart {
-            margin-right: 4em;
         }
     }
 }
