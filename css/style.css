@@ -439,13 +439,13 @@ header .restaurant-image img {
 }
 
 @media screen and (min-width: 1024px) {
-  .menu {
+  body .menu {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
     padding: 32px;
   }
-  .menu .responsive-container {
+  body .menu .responsive-container {
     column-gap: 3em;
   }
 }
