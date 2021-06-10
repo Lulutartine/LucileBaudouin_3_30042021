@@ -18,21 +18,28 @@
 // Courses selection
 .menu-card {
   & .check-box {
-      transform: translateX(100%);
-      transition: transform 0.8s;
-    & .fa-check-circle {
+    transform: translateX(100%);
+    transition: transform 0.8s;
+      & .fa-check-circle {
         transform: rotate(0);
         transition: transform 0.8s ;
-    }
+      }
+  }
+  &__text {
+    width: 100%;
+    transition: width 0.8s ;
   }
   &:hover {
     & .check-box {
-        transform: translateX(0%);
-        & .fa-check-circle {
-          transform: rotate(360deg);
-        }
+            transform: translateX(0%);
+            & .fa-check-circle {
+              transform: rotate(360deg);
+            }
     }
-  }  
-} 
+    & .menu-card__text {
+      width: 82%;
+    } 
+  }
+}
   
   

@@ -1,7 +1,6 @@
 footer {
     background-color: $darkgrey;
     padding: 15px;
-    position: relative;
 
     h5 {
         font-family: 'Shrikhand', cursive;
@@ -10,6 +9,9 @@ footer {
         margin: 0;
         font-weight:unset;
         padding-bottom: 15px;
+        @include desktop {
+            text-align: center;
+        }
     }
 
     ul {
@@ -17,6 +19,9 @@ footer {
         margin: 0;
         padding: 0;
         color: white;
+        @include desktop {
+            text-align: center;
+        }
 
         li {
             padding-bottom: 10px;

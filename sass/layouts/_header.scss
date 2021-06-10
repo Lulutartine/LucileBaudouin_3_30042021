@@ -1,18 +1,36 @@
-header {
+header {   
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 25px 15px 15px 15px;
-
-    a {
-        float: left;
-        position: absolute;
-        left: 1em;
-        color: $darkgrey;
+    flex-direction: column;
+    & .heading--flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 15px 15px 15px; 
+    background-color: white;
+        & a {
+            float: left;
+            position: absolute;
+            left: 1em;
+            color: $darkgrey;
+        }
+        & img {
+            width: 80%;
+            height: auto;
+        }
     }
-
-    img {
-        width: 50%;
-        height: auto;
+    & .restaurant-image {
+        width: 100%;
+        height: 32vh;
+        z-index: -1;
+        overflow: hidden;
+        & img {
+            object-fit: cover;
+            object-position: 0% 48%; 
+            // 50%
+            width: 100%;
+            height: 100%;
+        }
     }
 }

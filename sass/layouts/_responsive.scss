@@ -14,13 +14,16 @@ header {
     }
 }
 
-.responsive-container__tablet {
+.responsive-containner--flex {
     @include tablet {
         display: flex;
         & .reservation {
             justify-content: space-between;
             width: 60%;
             background-color: transparent;
+            & .btn {
+                width: 40%;
+            }
         }
         & .fonctionnement {
             width: 40%;
@@ -33,11 +36,9 @@ header {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        padding-left: 3em;
-        padding-right: 3em;
         & .restaurant-card {
                 width: 48%;
-                height: 23vh;
+                height: 24vh;
             }
     }
 }
@@ -70,8 +71,15 @@ header {
 }
 
 .menu {
-    .btn {
-        @include tablet {
+    @include tablet {
+    & .menu-card {
+        height: 5vh;
+        &__text {
+            height: 5vh;
+            justify-content: space-evenly;
+        }
+    }
+    & .btn {
         width: 19%;
         }
     }
@@ -79,30 +87,64 @@ header {
 
 // desktop ------------------------------------------//
 // index page
-.responsive-container__desktop {
+.responsive-containner--flex {
     @include desktop {
         margin-left: 5%;
         margin-right: 5%;
+        justify-content: space-between;
+        & .reservation {
+            justify-content: space-evenly;
+            width: 70%;
+        }
+        & .fonctionnement {
+            width: 23%;
+        }
+        }
     }
-}
 
-.restaurant-card__container {
+.restaurants {
     @include desktop {
-        & .restaurant-card {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
+        & .restaurant-card__container {
+            & .restaurant-card {
                 width: 24%;
+                &__top {
+                    height: 68%;
+                }
+                &__bottom {
+                    height: 32%;
+                }
             }
+        }
     }
 }
 
 // menu page
-body {
+.menu {
     @include desktop {
-        & .menu {
         width: 90%;
-        margin: auto;
-            & .menu-card__text {
-                justify-content: space-evenly;
-            }
+        margin-left: auto;
+        margin-right: auto;
+        padding: 32px;
+        & .responsive-container {
+            column-gap: 3em;
+        }
+    }
+}
+
+.menu {
+    @include desktop {
+    & .menu-card {
+        height: 7vh;
+        &__text {
+            height: 7vh;
+        }
+    }
+    & .btn {
+        margin-bottom: 1em;
         }
     }
 }
