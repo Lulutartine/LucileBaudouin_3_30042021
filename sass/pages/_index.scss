@@ -26,6 +26,8 @@
     position: relative;
     border-radius: 1.3em;
     height: 30vh;
+    min-height: 28vh;
+    max-height: 32vh;
     background-color: white;
     box-shadow: $boxshadow;
     margin-bottom: 1em;

@@ -3,11 +3,16 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    & .logo {
+            width: 10em;
+            height: auto;
+            margin: 25px 15px 15px 15px;
+    }
+
     & .heading--flex {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 25px 15px 15px 15px; 
     background-color: white;
         & a {
             float: left;
@@ -15,11 +20,8 @@ header {
             left: 1em;
             color: $darkgrey;
         }
-        & img {
-            width: 80%;
-            height: auto;
-        }
     }
+
     & .restaurant-image {
         width: 100%;
         height: 32vh;
@@ -28,7 +30,6 @@ header {
         & img {
             object-fit: cover;
             object-position: 0% 48%; 
-            // 50%
             width: 100%;
             height: 100%;
         }

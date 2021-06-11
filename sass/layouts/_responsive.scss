@@ -1,19 +1,11 @@
 // tablet  ------------------------------------------//
-// index page
 body {
     @include tablet {
         font-size: 14px;
     }
 }
 
-header {
-    & img {
-        @include tablet {
-            width: 25%;
-        }
-    }
-}
-
+// index page
 .responsive-containner--flex {
     @include tablet {
         display: flex;
@@ -39,6 +31,8 @@ header {
         & .restaurant-card {
                 width: 48%;
                 height: 24vh;
+                min-height: 22vh;
+                max-height: 26vh;
             }
     }
 }
@@ -51,7 +45,7 @@ header {
     grid-template-rows: none;
     grid-template-areas:
     "starters plates desserts";
-    column-gap: 1em;
+    column-gap: 3%;
 }
 }
 .menu-starters { 
@@ -74,8 +68,12 @@ header {
     @include tablet {
     & .menu-card {
         height: 5vh;
+        min-height: 4vh;
+        max-height: 6vh;
         &__text {
             height: 5vh;
+            min-height: 4vh;
+            max-height: 6vh;
             justify-content: space-evenly;
         }
     }
@@ -129,9 +127,6 @@ body .menu {
         margin-left: auto;
         margin-right: auto;
         padding: 32px;
-        & .responsive-container {
-            column-gap: 3em;
-        }
     }
 }
 
@@ -139,8 +134,12 @@ body .menu {
     @include desktop {
     & .menu-card {
         height: 7vh;
+        min-height: 6vh;
+        max-height: 8vh;
         &__text {
             height: 7vh;
+            min-height: 6vh;
+            max-height: 8vh;
         }
     }
     & .btn {
