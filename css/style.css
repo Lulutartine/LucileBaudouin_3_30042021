@@ -407,8 +407,8 @@ header .restaurant-image img {
 
 @media screen and (min-width: 1024px) {
   .responsive-containner--flex {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 7%;
+    margin-right: 7%;
     justify-content: space-between;
   }
   .responsive-containner--flex .reservation {
@@ -422,10 +422,8 @@ header .restaurant-image img {
 
 @media screen and (min-width: 1024px) {
   .restaurants {
-    margin-left: 5%;
-    margin-right: 5%;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-left: 7%;
+    padding-right: 7%;
   }
   .restaurants .restaurant-card__container .restaurant-card {
     width: 24%;
